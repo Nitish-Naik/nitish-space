@@ -5,25 +5,14 @@ import { motion } from "framer-motion";
 import ImageGallery from "./ImageGallery";
 
 // Import project images
-import dashboardImg from "../../public/assets/dashboard1.png";
-import dashboardImg2 from "../../public/assets/dashboard2.png";
-import dashboardImg3 from "../../public/assets/dashboard3.png";
-import dashboardImg4 from "../../public/assets/dashboard4.png";
-import dashboardImg5 from "../../public/assets/dashboard5.png";
-import dashboardImg6 from "../../public/assets/dashboard6.png";
-import documentImg from "../../public/assets/document1.png";
-import documentImg2 from "../../public/assets/document2.png";
-import documentImg3 from "../../public/assets/document3.png";
-import documentImg4 from "../../public/assets/document4.png";
-import documentImg5 from "../../public/assets/document5.png";
-import documentImg6 from "../../public/assets/document6.png";
-import documentImg7 from "../../public/assets/document7.png";
-import documentImg8 from "../../public/assets/document8.png";
+import dashboard1 from "../../public/assets/dashboard1.png";
+import dashboard2 from "../../public/assets/dashboard2.png";
+import dashboard3 from "../../public/assets/dashboard3.png";
+import dashboard4 from "../../public/assets/dashboard4.png";
+import dashboard5 from "../../public/assets/dashboard5.png";
+import dashboard6 from "../../public/assets/dashboard6.png";
 import automationImg from "../../public/assets/project-automation.jpg";
 import dataAnalysisImg from "../../public/assets/project-data-analysis.jpg";
-
-
-
 import instant0 from "../../public/assets/instant0.png";
 import instant00 from "../../public/assets/instant00.png";
 import instant1 from "../../public/assets/instantDev1.png";
@@ -42,44 +31,28 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      title: "AI Document Portal",
-      description: "Enable intelligent content generation, contextual suggestions, and smart automation tool using GPT-based models, content parsing, and reusable libraries. The AI system will assist in generating content sections, recommending clauses, and improving user productivity with minimal manual input.",
-      tech: ["Next.js", "TypeScript", "OpenAI", "Supabase", "Tailwind CSS"],
-      githubUrl: "#",
-      liveUrl: "http://15.223.242.19:3000/",
-      images: [documentImg, documentImg2, documentImg3, documentImg4, documentImg5, documentImg6, documentImg7, documentImg8]
-    },
-    {
-      title: "React‑Flask Web Dashboard",
-      description: "Interactive web dashboard for app analysis using React frontend + Flask backend",
-      tech: ["React", "Flask", "Python", "Tableau", "Pandas"],
-      githubUrl: "https://github.com/Nitish-Naik/Dasboard-Analysis",
-      liveUrl: "null",
-      images: [dashboardImg, dashboardImg2, dashboardImg3, dashboardImg4, dashboardImg5, dashboardImg6]
-    },
-    {
-      title: "Automation with Python & Selenium",
-      description: "Automated Vedabase.io for scraping verses, translation, meaning etc.",
-      tech: ["Python", "Selenium"],
-      githubUrl: "https://github.com/Nitish-Naik/bgscrape",
-      liveUrl: null,
+      title: "FlowMind AI",
+      description: "AI workflow orchestration engine that lets users compose multi-step pipelines from natural-language intent to structured execution.",
+      tech: ["Next.js", "Tailwind", "FastAPI", "Redis", "OpenAI"],
+      githubUrl: undefined,
+      liveUrl: undefined,
       images: [automationImg]
     },
     {
-      title: "Data Scraping Using Automation",
-      description: "Comprehensive Automation of Meeseva for scraping different departments",
-      tech: ["Python", "Selenium"],
-      githubUrl: "https://github.com/Nitish-Naik/meeseva",
-      liveUrl: null,
-      images: [dataAnalysisImg, dataAnalysisImg, dataAnalysisImg]
+      title: "CalmPilot",
+      description: "Real-time user platform with authentication, subscriptions, and low-latency WebSocket-driven UI updates.",
+      tech: ["Next.js", "React", "TypeScript", "Node.js", "WebSockets"],
+      githubUrl: undefined,
+      liveUrl: undefined,
+      images: [dashboard1, dashboard2, dashboard3, dashboard4, dashboard5, dashboard6]
     },
     {
-      title: "Instant Dev Logs",
-      description: "Transform Your Application Logs Into Actionable Insights",
-      tech: ["Next.js", "Typescript", "Convex", "Tailwind"],
-      githubUrl: "https://github.com/nitish22059/nitish-space",
-      liveUrl: "https://instantdevlogs.netlify.app/",
-      images: [instant0, instant0, instant1, instant2, instant3, instant4, instant5, instant6, instant7, instant8],
+      title: "LogIQ",
+      description: "Distributed logging and AI debugging platform for high-throughput ingestion, search, and root-cause analysis.",
+      tech: ["Next.js", "Node.js", "Redis Streams", "PostgreSQL", "OpenAI"],
+      githubUrl: undefined,
+      liveUrl: undefined,
+      images: [instant0, instant00, instant1, instant2, instant3, instant4, instant5, instant6, instant7, instant8]
     },
   ];
 
@@ -102,7 +75,6 @@ const ProjectsSection = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              {/* Project Image */}
               <div className="relative mb-4 overflow-hidden rounded-lg">
                 <img
                   src={project.images[0]}
@@ -141,22 +113,37 @@ const ProjectsSection = () => {
                 ))}
               </div>
               
-              <div className="flex gap-3">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="flex items-center gap-2"
-                    onClick={() => window.open(project.githubUrl, '_blank')}
-                  >
-                    <motion.div
-                      animate={{ rotate: [0, 360] }}
-                      transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+              <div className="flex flex-wrap gap-3">
+                {project.images.length > 0 && (
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Button
+                      variant="secondary"
+                      size="sm"
+                      className="flex items-center gap-2"
+                      onClick={() => openGallery(project.images)}
                     >
-                      <Github className="h-4 w-4" />
-                    </motion.div>
-                    Code
-                  </Button>
+                      <ImageIcon className="h-4 w-4" />
+                      View Screenshots
+                    </Button>
+                  </motion.div>
+                )}
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  {project.githubUrl && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex items-center gap-2"
+                      onClick={() => window.open(project.githubUrl, '_blank')}
+                    >
+                      <motion.div
+                        animate={{ rotate: [0, 360] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                      >
+                        <Github className="h-4 w-4" />
+                      </motion.div>
+                      Code
+                    </Button>
+                  )}
                 </motion.div>
                 {project.liveUrl && (
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

@@ -1,21 +1,18 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import { Linkedin, Github, Mail, Send } from "lucide-react";
+import { Linkedin, Github, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 
 const ContactSection = () => {
-  // Removed form state and handler. Using mailto link instead.
-
   return (
     <section id="connect" className="py-20">
       <div className="section-container">
         <h2 className="section-title fade-in">Connect with me</h2>
         <div className="max-w-2xl mx-auto">
+          <p className="text-center text-muted-foreground mb-8 fade-in fade-in-delay-1">
+            Hyderabad, India • Open to Remote • +91 9346144318
+          </p>
           {/* Social Links */}
-          <div className="flex justify-center gap-6 mb-12 fade-in fade-in-delay-1">
+          <div className="flex justify-center gap-6 mb-12 fade-in fade-in-delay-2">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 variant="outline"
@@ -51,7 +48,7 @@ const ContactSection = () => {
           </div>
 
           {/* Direct Email Button */}
-          <div className="bg-card border border-border rounded-lg p-8 shadow-sm fade-in fade-in-delay-2 flex flex-col items-center">
+          <div className="bg-card border border-border rounded-lg p-8 shadow-sm fade-in fade-in-delay-3 flex flex-col items-center">
             <a
               href="mailto:nitishnaik2022@gmail.com?subject=Contact%20from%20Portfolio"
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white dark:text-black rounded-lg text-lg font-semibold hover:bg-primary/90 transition"

@@ -23,10 +23,10 @@ const HeroSection = () => {
   const closeResume = () => setShowResume(false);
 
   const subtitles = [
-    "Associate Software Engineer",
-    "Student at CBIT, Hyderabad",
-    "Python • SQL • Data Analyst",
-    "Open-Source Contributor"
+    "Full-Stack Engineer",
+    "AI Products • Next.js + Node.js + TypeScript",
+    "Ships End-to-End Features",
+    "OWASP Open-Source Contributor"
   ];
 
   return (
@@ -37,13 +37,13 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <img
+          {/* <img
             src={profileImg}
-            alt="Nitish Profile"
+            alt="Nitish P Profile"
             className="mx-auto mb-4 rounded-full w-32 h-32 object-cover shadow-lg border-4 border-primary"
-          />
+          /> */}
           <h1 className="hero-text mb-2">
-            P Nitish
+            Nitish P
           </h1>
           {/* Social/Contact Icons */}
           <div className="flex justify-center gap-4 mb-4">
@@ -122,8 +122,6 @@ const HeroSection = () => {
                     )}
                     <iframe
                     
-                      // src="https://drive.google.com/file/d/1T4bGWUAiWyS8kwFLvdqrI_UFi2c3L7Fp/preview"
-                      // src="https://drive.google.com/file/d/1nf9Gx4q5lx-kUvcev87C8oDl6A8xovOH/preview"
                       src="https://drive.google.com/file/d/1rFTL_iTFNSuonXRXCY3LzrFzSD4Gw42t/preview"
                       title="Resume"
                       className="w-full h-[70vh] rounded border shadow-inner bg-gray-50 dark:bg-gray-800"

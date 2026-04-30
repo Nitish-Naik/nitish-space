@@ -5,14 +5,21 @@ const EducationSection = () => {
     {
       institution: "Blackcoffer",
       degree: "Associate Software Engineer",
-      description: "Worked on many different projecs",
+      description: "Shipped backend APIs and services in TypeScript / Node.js, Java, and PostgreSQL; improved database throughput by 60% and reduced p95 latency below 200ms.",
       icon: Briefcase,
       period: "May 2025 - Nov 2025"
     },
     {
+      institution: "Parsewave LLC",
+      degree: "Backend Engineer (Contract / Open Source)",
+      description: "Built backend pipelines for data validation, transformation, and reliable processing with strong consistency guarantees.",
+      icon: Briefcase,
+      period: "Contract / Open Source"
+    },
+    {
       institution: "Chaitanya Bharathi Institute of Technology, Hyderabad",
-      degree: "B.E. Student",
-      description: "Computer Science Engineering",
+      degree: "B.Tech in Computer Science & Engineering",
+      description: "CGPA: 8.81 / 10",
       icon: GraduationCap,
       period: "2022 - 2026"
     }
@@ -23,7 +30,7 @@ const EducationSection = () => {
       <div className="section-container">
         <h2 className="section-title fade-in">Experience & Education</h2>
         <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {education.map((item, index) => {
               const Icon = item.icon;
               return (

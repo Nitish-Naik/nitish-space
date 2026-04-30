@@ -59,7 +59,7 @@ const Navbar = () => {
             onClick={scrollToTop}
             className="text-xl font-bold text-primary hover:text-primary/80 transition-colors"
           >
-            P Nitish
+            Nitish P
           </button>
 
           {/* Desktop Navigation */}

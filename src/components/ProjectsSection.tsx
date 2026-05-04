@@ -31,6 +31,14 @@ const ProjectsSection = () => {
 
   const projects = [
     {
+      title: "Distributed Web Scraping Pipeline",
+      description: "Python crawling runtime with worker queues, Redis Streams, atomic URL deduplication, exponential-backoff retries, dead-letter queues, JSONL output, and plugin-based crawlers.",
+      tech: ["Python", "Redis Streams", "Linux", "Git", "Pytest", "Web Scraping"],
+      githubUrl: "https://github.com/Nitish-Naik/Distributed-Web-Scraping-Pipeline",
+      liveUrl: undefined,
+      images: [dataAnalysisImg]
+    },
+    {
       title: "FlowMind AI",
       description: "AI workflow orchestration engine that lets users compose multi-step pipelines from natural-language intent to structured execution.",
       tech: ["Next.js", "Tailwind", "FastAPI", "Redis", "OpenAI"],

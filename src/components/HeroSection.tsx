@@ -24,8 +24,9 @@ const HeroSection = () => {
 
   const subtitles = [
     "Full-Stack Engineer",
-    "AI Products • Next.js + Node.js + TypeScript",
-    "Ships End-to-End Features",
+    "Data Pipelines + Distributed Scraping",
+    "Python + PostgreSQL + Linux + Git",
+    "AI Products + Backend Systems",
     "OWASP Open-Source Contributor"
   ];
 
@@ -47,7 +48,7 @@ const HeroSection = () => {
           </h1>
           {/* Social/Contact Icons */}
           <div className="flex justify-center gap-4 mb-4">
-            <a href="https://www.linkedin.com/in/nitish-naik-" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/nitish-naik1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <Linkedin className="h-6 w-6 text-blue-600 hover:text-blue-800 transition" />
             </a>
             <a href="https://github.com/Nitish-Naik" target="_blank" rel="noopener noreferrer" aria-label="GitHub">

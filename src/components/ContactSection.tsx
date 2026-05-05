@@ -9,7 +9,7 @@ const ContactSection = () => {
         <h2 className="section-title fade-in">Connect with me</h2>
         <div className="max-w-2xl mx-auto">
           <p className="text-center text-muted-foreground mb-8 fade-in fade-in-delay-1">
-            Hyderabad, India • Open to Remote • +91 9346144318
+            Hyderabad, India | Open to Remote | +91 9346144318
           </p>
           {/* Social Links */}
           <div className="flex justify-center gap-6 mb-12 fade-in fade-in-delay-2">
@@ -18,7 +18,7 @@ const ContactSection = () => {
                 variant="outline"
                 size="lg"
                 className="flex items-center gap-2"
-                onClick={() => window.open('https://www.linkedin.com/in/nitish-naik-', '_blank')}
+                onClick={() => window.open('https://www.linkedin.com/in/nitish-naik1/', '_blank')}
               >
                 <motion.div
                   animate={{ y: [0, -2, 0] }}

@@ -13,6 +13,7 @@ import dashboard5 from "../../public/assets/dashboard5.png";
 import dashboard6 from "../../public/assets/dashboard6.png";
 import automationImg from "../../public/assets/project-automation.jpg";
 import dataAnalysisImg from "../../public/assets/project-data-analysis.jpg";
+import projectDashboardImg from "../../public/assets/project-dashboard.jpg";
 import instant0 from "../../public/assets/instant0.png";
 import instant00 from "../../public/assets/instant00.png";
 import instant1 from "../../public/assets/instantDev1.png";
@@ -30,6 +31,22 @@ const ProjectsSection = () => {
   const [currentImages, setCurrentImages] = useState<string[]>([]);
 
   const projects = [
+    {
+      title: "Distributed Web Scraping Pipeline",
+      description: "Python crawling runtime with worker queues, Redis Streams, atomic URL deduplication, exponential-backoff retries, dead-letter queues, JSONL output, and plugin-based crawlers.",
+      tech: ["Python", "Redis Streams", "Linux", "Git", "Pytest", "Web Scraping"],
+      githubUrl: "https://github.com/Nitish-Naik/Distributed-Web-Scraping-Pipeline",
+      liveUrl: undefined,
+      images: [dataAnalysisImg]
+    },
+    {
+      title: "CDFRS Extension",
+      description: "Research toolkit for streaming anomaly detection and adaptive ensembling with PySpark, Kafka producers/consumers, HIGGS/NIDS dataset partitioning, and throughput benchmarking.",
+      tech: ["Python", "PySpark", "Kafka", "Anomaly Detection", "Data Streams", "Benchmarking"],
+      githubUrl: "https://github.com/Nitish-Naik/CDFRS-Extension",
+      liveUrl: undefined,
+      images: [projectDashboardImg]
+    },
     {
       title: "FlowMind AI",
       description: "AI workflow orchestration engine that lets users compose multi-step pipelines from natural-language intent to structured execution.",

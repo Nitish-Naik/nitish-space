@@ -1,82 +1,46 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Image as ImageIcon } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import { motion } from "framer-motion";
-import ImageGallery from "./ImageGallery";
-
-// Import project images
-import dashboard1 from "../../public/assets/dashboard1.png";
-import dashboard2 from "../../public/assets/dashboard2.png";
-import dashboard3 from "../../public/assets/dashboard3.png";
-import dashboard4 from "../../public/assets/dashboard4.png";
-import dashboard5 from "../../public/assets/dashboard5.png";
-import dashboard6 from "../../public/assets/dashboard6.png";
-import automationImg from "../../public/assets/project-automation.jpg";
-import dataAnalysisImg from "../../public/assets/project-data-analysis.jpg";
-import projectDashboardImg from "../../public/assets/project-dashboard.jpg";
-import instant0 from "../../public/assets/instant0.png";
-import instant00 from "../../public/assets/instant00.png";
-import instant1 from "../../public/assets/instantDev1.png";
-import instant2 from "../../public/assets/instant2.png";
-import instant3 from "../../public/assets/instant3.png";
-import instant4 from "../../public/assets/instant4.png";
-import instant5 from "../../public/assets/instant5.png";
-import instant6 from "../../public/assets/instant6.png";
-import instant7 from "../../public/assets/instant7.png";
-import instant8 from "../../public/assets/instant8.png";
 
 
 const ProjectsSection = () => {
-  const [galleryOpen, setGalleryOpen] = useState(false);
-  const [currentImages, setCurrentImages] = useState<string[]>([]);
-
   const projects = [
     {
       title: "Distributed Web Scraping Pipeline",
       description: "Python crawling runtime with worker queues, Redis Streams, atomic URL deduplication, exponential-backoff retries, dead-letter queues, JSONL output, and plugin-based crawlers.",
       tech: ["Python", "Redis Streams", "Linux", "Git", "Pytest", "Web Scraping"],
       githubUrl: "https://github.com/Nitish-Naik/Distributed-Web-Scraping-Pipeline",
-      liveUrl: undefined,
-      images: [dataAnalysisImg]
+      liveUrl: undefined
     },
     {
       title: "CDFRS Extension",
       description: "Research toolkit for streaming anomaly detection and adaptive ensembling with PySpark, Kafka producers/consumers, HIGGS/NIDS dataset partitioning, and throughput benchmarking.",
       tech: ["Python", "PySpark", "Kafka", "Anomaly Detection", "Data Streams", "Benchmarking"],
       githubUrl: "https://github.com/Nitish-Naik/CDFRS-Extension",
-      liveUrl: undefined,
-      images: [projectDashboardImg]
+      liveUrl: undefined
     },
     {
       title: "FlowMind AI",
       description: "AI workflow orchestration engine that lets users compose multi-step pipelines from natural-language intent to structured execution.",
       tech: ["Next.js", "Tailwind", "FastAPI", "Redis", "OpenAI"],
       githubUrl: undefined,
-      liveUrl: undefined,
-      images: [automationImg]
+      liveUrl: undefined
     },
     {
       title: "CalmPilot",
       description: "Real-time user platform with authentication, subscriptions, and low-latency WebSocket-driven UI updates.",
       tech: ["Next.js", "React", "TypeScript", "Node.js", "WebSockets"],
       githubUrl: undefined,
-      liveUrl: undefined,
-      images: [dashboard1, dashboard2, dashboard3, dashboard4, dashboard5, dashboard6]
+      liveUrl: undefined
     },
     {
       title: "LogIQ",
       description: "Distributed logging and AI debugging platform for high-throughput ingestion, search, and root-cause analysis.",
       tech: ["Next.js", "Node.js", "Redis Streams", "PostgreSQL", "OpenAI"],
       githubUrl: undefined,
-      liveUrl: undefined,
-      images: [instant0, instant00, instant1, instant2, instant3, instant4, instant5, instant6, instant7, instant8]
+      liveUrl: undefined
     },
   ];
-
-  const openGallery = (images: string[]) => {
-    setCurrentImages(images);
-    setGalleryOpen(true);
-  };
 
   return (
     <section id="projects" className="py-20 bg-muted/30">
@@ -92,25 +56,6 @@ const ProjectsSection = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="relative mb-4 overflow-hidden rounded-lg">
-                <img
-                  src={project.images[0]}
-                  alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                  <Button
-                    variant="secondary"
-                    size="sm"
-                    className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    onClick={() => openGallery(project.images)}
-                  >
-                    <ImageIcon className="h-4 w-4 mr-2" />
-                    View Gallery
-                  </Button>
-                </div>
-              </div>
-
               <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
                 {project.title}
               </h3>
@@ -131,19 +76,6 @@ const ProjectsSection = () => {
               </div>
               
               <div className="flex flex-wrap gap-3">
-                {project.images.length > 0 && (
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Button
-                      variant="secondary"
-                      size="sm"
-                      className="flex items-center gap-2"
-                      onClick={() => openGallery(project.images)}
-                    >
-                      <ImageIcon className="h-4 w-4" />
-                      View Screenshots
-                    </Button>
-                  </motion.div>
-                )}
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   {project.githubUrl && (
                     <Button
@@ -184,13 +116,6 @@ const ProjectsSection = () => {
           ))}
         </div>
       </div>
-
-      {/* Image Gallery Modal */}
-      <ImageGallery
-        images={currentImages}
-        isOpen={galleryOpen}
-        onClose={() => setGalleryOpen(false)}
-      />
     </section>
   );
 };
